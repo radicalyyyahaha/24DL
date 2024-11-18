@@ -22,7 +22,7 @@ class VanillaRNN(nn.Module):
     def forward(self, x):
         # Implementation here ...
         bach_size = x.size(0)
-        h_t = torch.zeros(bach_size, self.hidden_dim, device=x.devcie)
+        h_t = torch.zeros(bach_size, self.hidden_dim, device='mps')
 
         for t in range(x.size(1)):
             x_t = x[:, t, :]
